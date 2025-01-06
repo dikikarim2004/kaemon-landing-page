@@ -25,8 +25,16 @@ const features = [
 
 export const Features = () => {
   return (
-    <section className="py-24 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="relative py-24">      
+    {/*Background image and overlay */}
+    <div 
+        className="absolute inset-0 bg-[url('/features-bg.png')] bg-cover bg-center"
+        style={{ backgroundBlendMode: 'overlay' }}
+      />
+      <div className="absolute inset-0 bg-white/85" />
+      
+      {/* Content */}
+      <div className="container relative z-10 mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-secondary">
           Revolutionary Features
         </h2>
@@ -34,7 +42,7 @@ export const Features = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="p-6 rounded-lg bg-white border border-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-up"
+              className="p-6 rounded-lg bg-white/80 backdrop-blur-sm border border-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-up"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <feature.icon className="h-12 w-12 text-primary mb-4" />

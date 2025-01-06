@@ -4,6 +4,13 @@ import { ArrowRight, Smartphone, Zap } from "lucide-react";
 export const Hero = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-secondary to-primary-dark overflow-hidden">
+      {/* Background image and overlay */}
+      <div 
+        className="absolute inset-0 bg-[url('/blockchain-hero.png')] bg-cover bg-center"
+        style={{ backgroundBlendMode: 'overlay' }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-secondary/95 to-primary-dark/5" />
+      
       {/* Background grid pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
       
